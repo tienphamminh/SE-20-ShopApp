@@ -51,7 +51,7 @@ const SignInScreen = ({navigation}) => {
         )}
       </SignInContainer>
 
-      <SignUp>
+      <SignUp onPress={() => navigation.navigate('SignUp')}>
         <Text small center>
           Create new account?{' '}
           <Text bold color="#8022d9">
