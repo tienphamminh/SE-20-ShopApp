@@ -9,9 +9,9 @@ const SignUpScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState(false);
-  
+
   return (
-  <Container>
+    <Container>
       <Main>
         <Text title semi center>
           Sign In to get started
@@ -182,3 +182,4 @@ const LeftCircle = styled.View`
 const StatusBar = styled.StatusBar``;
 
 export default SignUpScreen;
+
