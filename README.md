@@ -38,26 +38,28 @@ npx react-native run-android
  
  ### Demo:
  1. **Loading screen**
- <p><img src="demo/loading.png" width="250" /></p>
+ <p><img src="demo/loading.png" width="300" /></p>
  
  Loading Screen contains Text or Images that shows when the app first starts. It is used when the mobile app requires essential information before its start. The application may load the information from some external API or local storage.
  
  2. **Sign in, sign up screen**
- <img src="demo/sign-in.png" width="250" />
+ <img src="demo/sign-in.png" width="300" />
  
  Users need to enter their registered email and password to access the system. If you don't have an account, click at ``Create new account? Sign Up``
  
- <img src="demo/sign-up.png" width="250" />
+ <img src="demo/sign-up.png" width="300" />
  
  When you register successfully, the data will be entered into Firebase Authentication:
  
+ <img src="demo/firebase.png" width="700" />
+ 
  3. **Home screen**
-  <img src="demo/home.png" width="250" />
+  <img src="demo/home.png" width="300" />
   
   Display product categories and deal of the day
   
  4. **Cart screen**
- <img src="demo/Cart.png" width="250" />
+ <img src="demo/Cart.png" width="300" />
  
  ### References:
  [https://reactnative.dev/docs/getting-started](https://reactnative.dev/docs/getting-started)
