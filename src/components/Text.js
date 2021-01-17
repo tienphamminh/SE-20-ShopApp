@@ -1,6 +1,8 @@
 import React from 'react-native';
 import styled from 'styled-components';
 
+
+
 const Text = styled.Text`
   color: ${(props) => props.color ?? '#414959'};
   margin: ${(props) => props.margin ?? 0};

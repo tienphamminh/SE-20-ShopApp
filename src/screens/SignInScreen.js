@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import Text from '../components/Text';
 
-
 const SignInScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -24,7 +23,7 @@ const SignInScreen = ({navigation}) => {
             autoCompleteType="email"
             autoCorrect={false}
             keyboardType="email-address"
-            onChangeText={(text) => setEmail(text.trim())}
+            onChangeText={(email) => setEmail(email.trim())}
             value={email}
           />
         </AuthContainer>
@@ -36,13 +35,13 @@ const SignInScreen = ({navigation}) => {
             autoCompleteType="password"
             autoCorrect={false}
             secureTextEntry={true}
-            onChangeText={(text) => setPassword(text.trim())}
+            onChangeText={(password) => setPassword(password.trim())}
             value={password}
           />
         </AuthContainer>
       </Auth>
 
-      <SignInContainer disabled={loading} onPress={() => navigation.navigate('Main')}>
+      <SignInContainer disabled={loading}>
         {loading ? (
           <Loading />
         ) : (
