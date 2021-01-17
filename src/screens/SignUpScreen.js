@@ -1,6 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import styled from 'styled-components';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+
+import {FirebaseContext} from '../context/FirebaseContext';
+import {UserContext} from '../context/UserContext';
 
 import Text from '../components/Text';
 
@@ -9,12 +12,31 @@ const SignUpScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState(false);
+  const firebase = useContext(FirebaseContext);
+  const [_, setUser] = useContext(UserContext);
+
+  const signUp = async () => {
+    setLoading(true);
+
+    const user = {username, email, password};
+    console.log(user);
+
+    try {
+      const createdUser = await firebase.createUser(user);
+      console.log(createdUser);
+      setUser({...createdUser, isLoggedIn: true});
+    } catch (error) {
+      console.log('Error @signUp:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <Container>
       <Main>
         <Text title semi center>
-          Sign In to get started
+          Sign Up to get started
         </Text>
       </Main>
 
@@ -61,7 +83,7 @@ const SignUpScreen = ({navigation}) => {
         </AuthContainer>
       </Auth>
 
-      <SignUpContainer disabled={loading}>
+      <SignUpContainer onPress={signUp} disabled={loading}>
         {loading ? (
           <Loading />
         ) : (
@@ -182,4 +204,3 @@ const LeftCircle = styled.View`
 const StatusBar = styled.StatusBar``;
 
 export default SignUpScreen;
-
